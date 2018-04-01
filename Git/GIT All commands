@@ -1,0 +1,24 @@
+> git status
+> git clone <repo_link> <folder_name>
+> git branch -b <branch_name>
+> git config --global user.email "rohitnandi@sarathisoftech.com"
+> git config --global user.name "rohitnandi"
+> git config --global user.password "Rn@1205gh"
+
+> git config --global credential.helper 'cache --timeout 3600'
+Above command will tell git to cache your password for 1 hours.
+
+
+> git credential-cache exit
+How to make git forget this password ?
+If you want to switch to another github account then u can run this command
+Above command will flush any stored password from cache.
+
+
+> git branch -a
+> git branch -r
+> git branch -d <branch_name>
+> git branch -D <branch_name>  // force
+> git push <remote_name> --delete <branch_name>
+
+
