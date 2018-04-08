@@ -1,0 +1,3 @@
+ // rename files, ignoring restrictions
+
+ ren gitignore.txt .gitignore

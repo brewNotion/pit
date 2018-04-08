@@ -1,0 +1,83 @@
+
+https://stackoverflow.com/questions/49684828/how-do-i-select-a-random-object-from-a-json-file-with-javascript/49689981#49689981
+
+This can be done in two steps
+
+Loading Json file using Javascript and local server
+
+1> Create a Json file, name it botNames.json, add your data.
+
+Note: .json files can only contain Json Object, Array or Json literal
+
+{
+    "311": "Blargon",
+    "310": "Xryzoz",
+    "303": "Noot",
+    "279": "",
+    "312": "Arragn",
+    "35": "Qeud"
+}
+Use XMLHttpRequest() to load the data, you can use below function to load the .json file passing a callback function and the path as an argument.
+
+function loadJSON(callback,url) {   
+  var xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open('GET', url, true); 
+  xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          callback(xobj.responseText);
+        }
+  };
+  xobj.send(null);
+}
+To generate a random index you can use the below expression
+
+Math.floor(lowerLimt + (upperLimit - lowerLimit+1)*Math.Random())
+
+this will give you values in the range [lowerLimit,upperLimit)
+
+Note: This is possible because Math.random() generates a fractional number in the range [0,1)
+
+Your callback function will be
+
+function callback1(response){
+        var botNames = JSON.parse(response)
+        var keys = Object.keys(botNames);
+        var randomProperty = keys[Math.floor(keys.length*Math.random())]
+        var botName = botNames[randomProperty]
+        console.log(botName);
+    }
+You can use above concepts in your code as
+
+function loadJSON(callback,url) {   
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', url, true); 
+    xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+            // sending the resonse to your callback
+            callback(xobj.responseText);
+            }
+    };
+    xobj.send(null);
+}
+
+function spawn(){
+        loadJSON(function(response){
+          //This is your callback function
+
+          var names = JSON.parse(response)
+          var keys = Object.keys(botNames);
+          var randomNum = keys[Math.floor(keys.length*Math.random())]
+            
+          if (randomNum === 24) return
+          const name = names[randomNum]
+          const embed = new Discord.RichEmbed()
+          .setTitle(`${name} has been found!`)
+          .setColor(0x00AE86)
+          .setThumbnail(`attachment://./sprites/${randomNum}.png`)
+          .setTimestamp()
+          .addField("Quick! Capture it with `>capture`!")
+          msg.channel.send({embed});
+        },'/PATH_TO_YOUR_JSON/botNames.json')
+    }

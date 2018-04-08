@@ -1,0 +1,7 @@
+run a simple Http server
+
+Python < 3
+python -m SimpleHTTPServer [port]
+
+Python > 3
+python -m http.server [port]
