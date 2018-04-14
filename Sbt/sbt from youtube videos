@@ -1,0 +1,16 @@
+Inside sbt shell
+> show name
+> show scalaVersion
+> show version
+> show organization
+> set organization := "com.something"
+> session save // saves whatever changes we make in SBT shell and buil.sbt is created/updated
+> exit
+> reload // use after making any .sbt change
+> project [projectName] //Select a project
+
+//check versions
+sbt sbtVersion
+sbt 'inspect sbtVersion'
+
+
