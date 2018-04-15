@@ -1,3 +1,21 @@
  // rename files, ignoring restrictions
 
  ren gitignore.txt .gitignore
+
+ // create a file and add text
+ echo > a.txt
+ echo "text content" > a.txt
+OR
+NUL > fileName.extension
+// appends new sentences
+echo "content 1 ">> a.txt
+echo "content 2 ">> a.txt
+
+//delete a file
+del fileName.ext
+
+
+//Directories
+mkdir dirName
+rmdir dirName
+die //show dir contents

@@ -1,7 +1,19 @@
 run a simple Http server
 
-Python < 3
-python -m SimpleHTTPServer [port]
+#For Python version < 3
+$python -m SimpleHTTPServer [port]
 
-Python > 3
+#For Python version > 3
 python -m http.server [port]
+
+
+#use type() to check list
+>>> type([]) is list
+>>> type({}) is dict
+>>> type('') is str
+>>> type(0) is int
+>>> type({})
+<type 'dict'>
+>>> type([])
+<type 'list'>
+>>> isinstance([],list) -> True
