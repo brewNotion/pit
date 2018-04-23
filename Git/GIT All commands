@@ -21,4 +21,5 @@ Above command will flush any stored password from cache.
 > git branch -D <branch_name>  // force
 > git push <remote_name> --delete <branch_name>
 
+> git remote -v // view remote repositories linked to
 
