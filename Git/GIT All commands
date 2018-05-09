@@ -15,8 +15,10 @@ If you want to switch to another github account then u can run this command
 Above command will flush any stored password from cache.
 
 
-> git branch -a
-> git branch -r
+> git checkout -b <new_branch_name>  //create a new local branch
+> git push -u origin <new_branch>	// -u is shortcut for --set-upstream
+> git branch -a // show all branches
+> git branch -r // show only remote branches
 > git branch -d <branch_name>
 > git branch -D <branch_name>  // force
 > git push <remote_name> --delete <branch_name>
