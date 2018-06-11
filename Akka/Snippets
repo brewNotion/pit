@@ -1,0 +1,23 @@
+
+------------ Creating remote objects, pragramitically
+//val validator = Config.akkaSystem.actorSelection("akka.tcp://ValidationRemoteSystem@127.0.0.1:9051/user/ValidationRemote")
+  val backendAddress = AddressFromURIString("akka.tcp://ValidationRemoteSystem@127.0.0.1:9051")
+  
+--------------- creat remote using configuration
+  val validator = Config.akkaSystem.actorOf(Props[LearningValidation],"validationActor")
+  println("remote actor "+validator)
+
+--- In client 
+akka {
+	actor {
+
+	    #    provider = "akka.remote.RemoteActorRefProvider"
+
+	    deployment {
+	      /validationActor {
+		remote = "akka.tcp://ValidationRemoteSystem@127.0.0.1:9051"
+	      }
+	    }
+	  }
+
+}

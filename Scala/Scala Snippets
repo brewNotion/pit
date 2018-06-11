@@ -1,0 +1,6 @@
+object Main extends App {
+  println(greeting+" Rohit")
+  val greeting = "Mr."
+}
+
+Output : "null Rohit"

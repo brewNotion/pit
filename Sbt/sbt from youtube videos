@@ -8,9 +8,12 @@ Inside sbt shell
 > exit
 > reload // use after making any .sbt change
 > project [projectName] //Select a project
+> package // create jar files
+
 
 //check versions
 sbt sbtVersion
 sbt 'inspect sbtVersion'
 
+>jar tvf path_to_.jar // inspects the files inside the jar files
 

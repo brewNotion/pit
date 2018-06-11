@@ -1,0 +1,11 @@
+########## ping command
+
+The /usr/sbin/ping command sends an Internet Control Message Protocol (ICMP) ECHO_REQUEST to obtain an ICMP ECHO_RESPONSE from a host or gateway. The ping command is useful for:
+
+Determining the status of the network and various foreign hosts.
+Tracking and isolating hardware and software problems.
+Testing, measuring, and managing networks.
+If the host is operational and on the network, it responds to the echo. Each echo request contains an Internet Protocol (IP) and ICMP header, followed by a ping PID and a timeval structure, and enough bytes to fill out the packet. The default is to continuously send echo requests until an Interrupt is received (Ctrl-C).
+
+
+################################
