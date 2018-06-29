@@ -6,9 +6,10 @@ Inside sbt shell
 > set organization := "com.something"
 > session save // saves whatever changes we make in SBT shell and buil.sbt is created/updated
 > exit
-> reload // use after making any .sbt change
+> reload // use after making any changes to .sbt files
 > project [projectName] //Select a project
-> package // create jar files
+> package // create respective jar files
+> assembly // creates a fat jar
 
 
 //check versions

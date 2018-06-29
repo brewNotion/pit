@@ -8,6 +8,9 @@
 > git config --global credential.helper 'cache --timeout 3600'
 Above command will tell git to cache your password for 1 hours.
 
+> git --version
+
+> git config --list --show-origin
 
 > git credential-cache exit
 How to make git forget this password ?
@@ -22,6 +25,14 @@ Above command will flush any stored password from cache.
 > git branch -d <branch_name>
 > git branch -D <branch_name>  // force
 > git push <remote_name> --delete <branch_name>
+> git diff // shows difference which are unstagged
+> git diff --cached
 
 > git remote -v // view remote repositories linked to
+
+> git show	//View last commit details shows you the diff as well.
+
+> git log -1    // View last commit details, is fast and simple.
+
+> git log -1 --pretty=%B  //if you need just the commit message and nothing else.
 
