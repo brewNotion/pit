@@ -18,3 +18,7 @@ sbt 'inspect sbtVersion'
 
 >jar tvf path_to_.jar // inspects the files inside the jar files
 
+> sbt -mem 1500 //This sets the heap space to 1.5 GB and the MaxMetaspace to 512 MB.
+> alias sbt="sbt -mem 1500"   // Set alias to reuse 
+
+
